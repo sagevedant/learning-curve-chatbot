@@ -6,18 +6,4 @@ export default defineConfig({
   server: {
     port: 5173,
   },
-  build: {
-    outDir: 'dist',
-    lib: {
-      entry: 'src/widget-entry.jsx',
-      name: 'LearningCurveChat',
-      fileName: 'widget',
-      formats: ['iife'],
-    },
-    rollupOptions: {
-      output: {
-        assetFileNames: 'widget.[ext]',
-      },
-    },
-  },
 })
