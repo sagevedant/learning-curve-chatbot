@@ -3,7 +3,7 @@
  * If Ollama isn't available, falls back to a polite redirect.
  */
 
-const SCHOOL_SYSTEM_PROMPT = `You are a friendly admissions assistant for Learning Curve Preschool in Viman Nagar, Pune.
+const SCHOOL_SYSTEM_PROMPT = `You are a friendly admissions assistant for Curious Learners Preschool in Viman Nagar, Pune.
 
 ABOUT THE SCHOOL:
 - Location: Viman Nagar, Pune 411014

@@ -5,34 +5,34 @@
 let resendClient = null;
 
 try {
-    if (process.env.RESEND_API_KEY) {
-        const { Resend } = require('resend');
-        resendClient = new Resend(process.env.RESEND_API_KEY);
-        console.log('✅ Resend email notifications enabled');
-    } else {
-        console.log('ℹ️  RESEND_API_KEY not set — email notifications disabled');
-    }
+  if (process.env.RESEND_API_KEY) {
+    const { Resend } = require('resend');
+    resendClient = new Resend(process.env.RESEND_API_KEY);
+    console.log('✅ Resend email notifications enabled');
+  } else {
+    console.log('ℹ️  RESEND_API_KEY not set — email notifications disabled');
+  }
 } catch (err) {
-    console.log('ℹ️  Resend not available:', err.message);
+  console.log('ℹ️  Resend not available:', err.message);
 }
 
 /**
  * Send email notification for a new lead
  */
 async function sendEmailNotification(lead) {
-    if (!resendClient) {
-        console.log('📧 Email notification skipped (Resend not configured)');
-        return null;
-    }
+  if (!resendClient) {
+    console.log('📧 Email notification skipped (Resend not configured)');
+    return null;
+  }
 
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@learningcurveschool.com';
+  const adminEmail = process.env.ADMIN_EMAIL || 'admin@learningcurveschool.com';
 
-    try {
-        const { data, error } = await resendClient.emails.send({
-            from: 'Learning Curve Bot <onboarding@resend.dev>',
-            to: [adminEmail],
-            subject: `New Enquiry: ${lead.parent_name} - ${lead.program_interest} - Learning Curve`,
-            html: `
+  try {
+    const { data, error } = await resendClient.emails.send({
+      from: 'Curious Learners Bot <onboarding@resend.dev>',
+      to: [adminEmail],
+      subject: `New Enquiry: ${lead.parent_name} - ${lead.program_interest} - Curious Learners`,
+      html: `
         <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); padding: 20px; border-radius: 12px 12px 0 0;">
             <h2 style="color: white; margin: 0;">🏫 New Admission Enquiry!</h2>
@@ -53,26 +53,26 @@ async function sendEmailNotification(lead) {
           </div>
         </div>
       `,
-        });
+    });
 
-        if (error) {
-            console.error('Email send error:', error);
-            return null;
-        }
-
-        console.log('📧 Email notification sent:', data?.id);
-        return data;
-    } catch (err) {
-        console.error('Email notification failed:', err.message);
-        return null;
+    if (error) {
+      console.error('Email send error:', error);
+      return null;
     }
+
+    console.log('📧 Email notification sent:', data?.id);
+    return data;
+  } catch (err) {
+    console.error('Email notification failed:', err.message);
+    return null;
+  }
 }
 
 /**
  * Format WhatsApp notification message (for future Twilio integration)
  */
 function formatWhatsAppMessage(lead) {
-    return `🏫 New Admission Enquiry!
+  return `🏫 New Admission Enquiry!
 ━━━━━━━━━━━━━━
 👤 Parent: ${lead.parent_name}
 📞 Phone: ${lead.phone}

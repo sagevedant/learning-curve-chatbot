@@ -1,10 +1,10 @@
 /**
- * Rule-based conversation engine for Learning Curve Preschool.
+ * Rule-based conversation engine for Curious Learners Preschool.
  * Handles the complete guided flow without any AI — all responses are predefined.
  */
 
 const SCHOOL_INFO = {
-    name: 'Learning Curve Preschool',
+    name: 'Curious Learners Preschool',
     location: 'Viman Nagar, Pune - 411014',
     phone: '+91 98765 43210',
     hours: 'Mon-Sat: 9 AM to 5 PM',
@@ -41,7 +41,7 @@ function processStep(step, userMessage, data = {}) {
         // ─── MAIN FLOW ─────────────────────────────────────────────
         case 'welcome':
             return {
-                message: "👋 Hi! Welcome to Learning Curve Preschool, Viman Nagar! I'm here to help you find the perfect program for your little one. Shall we get started?",
+                message: "👋 Hi! Welcome to Curious Learners Preschool, Viman Nagar! I'm here to help you find the perfect program for your little one. Shall we get started?",
                 options: ["Yes, Let's Go! 🎉", "Just Browsing"],
                 nextStep: 'welcome_response',
                 data,
@@ -103,7 +103,7 @@ function processStep(step, userMessage, data = {}) {
         case 'booking_choice':
             if (userMessage === "Not Now") {
                 return {
-                    message: `Thank you for your interest in Learning Curve! 🏫\n\nFeel free to reach out anytime:\n📞 ${SCHOOL_INFO.phone}\n📍 ${SCHOOL_INFO.location}\n⏰ ${SCHOOL_INFO.hours}\n\nWe'd love to meet you and your little one! 👶`,
+                    message: `Thank you for your interest in Curious Learners! 🏫\n\nFeel free to reach out anytime:\n📞 ${SCHOOL_INFO.phone}\n📍 ${SCHOOL_INFO.location}\n⏰ ${SCHOOL_INFO.hours}\n\nWe'd love to meet you and your little one! 👶`,
                     nextStep: 'end',
                     data,
                 };
@@ -151,7 +151,7 @@ function processStep(step, userMessage, data = {}) {
         case 'visit_time_response': {
             const finalData = { ...data, visitPreference: userMessage };
             return {
-                message: `🎉 Thank you ${finalData.parentName}!\n\nOur admissions team will call you at ${finalData.phone} within 24 hours to confirm your visit to Learning Curve!\n\n📍 ${SCHOOL_INFO.location}\n📞 ${SCHOOL_INFO.phone}\n⏰ ${SCHOOL_INFO.hours}\n\nWe look forward to meeting you and your little one! 👶`,
+                message: `🎉 Thank you ${finalData.parentName}!\n\nOur admissions team will call you at ${finalData.phone} within 24 hours to confirm your visit to Curious Learners!\n\n📍 ${SCHOOL_INFO.location}\n📞 ${SCHOOL_INFO.phone}\n⏰ ${SCHOOL_INFO.hours}\n\nWe look forward to meeting you and your little one! 👶`,
                 nextStep: 'end',
                 data: finalData,
                 captureComplete: true,
@@ -187,7 +187,7 @@ function processStep(step, userMessage, data = {}) {
 
                 case 'Safety & Facilities':
                     return {
-                        message: "At Learning Curve we have:\n\n✅ CCTV surveillance\n✅ Female security staff\n✅ Safe pickup/drop protocols\n✅ First aid trained staff\n✅ Nutritionist planned meals\n✅ Clean sanitized classrooms\n\nWould you like to see our facilities in person?",
+                        message: "At Curious Learners we have:\n\n✅ CCTV surveillance\n✅ Female security staff\n✅ Safe pickup/drop protocols\n✅ First aid trained staff\n✅ Nutritionist planned meals\n✅ Clean sanitized classrooms\n\nWould you like to see our facilities in person?",
                         options: ["Book a Visit", "Not Now"],
                         nextStep: 'info_action_response',
                         data,
@@ -195,7 +195,7 @@ function processStep(step, userMessage, data = {}) {
 
                 case 'How to Reach Us':
                     return {
-                        message: `📍 **Learning Curve School**\n${SCHOOL_INFO.location}\n\n📞 ${SCHOOL_INFO.phone}\n🕘 ${SCHOOL_INFO.hours}\n\nWould you like us to call you?`,
+                        message: `📍 **Curious Learners School**\n${SCHOOL_INFO.location}\n\n📞 ${SCHOOL_INFO.phone}\n🕘 ${SCHOOL_INFO.hours}\n\nWould you like us to call you?`,
                         options: ["Yes, Call Me", "I'll Call You"],
                         nextStep: 'contact_response',
                         data,

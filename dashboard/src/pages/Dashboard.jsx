@@ -44,7 +44,7 @@ export default function Dashboard({ onLogout }) {
                             </svg>
                         </div>
                         <div>
-                            <h1 className="text-lg font-bold text-dark">Learning Curve</h1>
+                            <h1 className="text-lg font-bold text-dark">Curious Learners</h1>
                             <p className="text-xs text-gray-500">Admin Dashboard</p>
                         </div>
                     </div>

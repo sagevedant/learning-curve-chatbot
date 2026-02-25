@@ -1,7 +1,7 @@
 {
   "name": "learning-curve-chatbot-backend",
   "version": "1.0.0",
-  "description": "Backend API for Learning Curve Preschool Chatbot",
+  "description": "Backend API for Curious Learners Preschool Chatbot",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

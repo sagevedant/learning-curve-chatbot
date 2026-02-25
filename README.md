@@ -1,6 +1,6 @@
-# 🏫 Learning Curve Preschool Chatbot
+# 🏫 Curious Learners Preschool Chatbot
 
-Complete lead-capture chatbot system for **Learning Curve School, Viman Nagar, Pune**.
+Complete lead-capture chatbot system for **Curious Learners School, Viman Nagar, Pune**.
 
 ## Architecture
 

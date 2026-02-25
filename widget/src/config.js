@@ -11,7 +11,7 @@ export default {
         border: '#E8ECF0',
     },
     school: {
-        name: 'Learning Curve',
+        name: 'Curious Learners',
         phone: '+91 98765 43210',
         location: 'Viman Nagar, Pune - 411014',
         hours: 'Mon-Sat: 9 AM to 5 PM',

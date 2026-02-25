@@ -54,7 +54,7 @@ export default function ChatWindow({
                         </svg>
                     </div>
                     <div>
-                        <h3 className="text-white font-bold text-[16px] leading-tight">Learning Curve</h3>
+                        <h3 className="text-white font-bold text-[16px] leading-tight">Curious Learners</h3>
                         <p className="text-white/80 text-[12px]">Preschool • Viman Nagar</p>
                     </div>
                 </div>

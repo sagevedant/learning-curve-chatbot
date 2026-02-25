@@ -31,7 +31,7 @@ app.use(express.json({ limit: '1mb' }));
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', service: 'Learning Curve Chatbot API' });
+  res.json({ status: 'ok', service: 'Curious Learners Chatbot API' });
 });
 
 // Routes
@@ -49,5 +49,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🏫 Learning Curve Chatbot API running on port ${PORT}`);
+  console.log(`🏫 Curious Learners Chatbot API running on port ${PORT}`);
 });

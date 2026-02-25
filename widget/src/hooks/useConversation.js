@@ -67,7 +67,7 @@ export default function useConversation() {
             const data = await res.json();
             processResponse(data);
         } catch (err) {
-            addMessage(`👋 Hi! Welcome to Learning Curve Preschool! I'm having a little trouble connecting right now. Please call us at ${config.school.phone} — we'd love to chat! 📞`, 'bot');
+            addMessage(`👋 Hi! Welcome to Curious Learners Preschool! I'm having a little trouble connecting right now. Please call us at ${config.school.phone} — we'd love to chat! 📞`, 'bot');
         } finally {
             setLoading(false);
         }
